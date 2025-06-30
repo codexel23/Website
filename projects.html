@@ -8,7 +8,7 @@
 </head>
 <body>
 	<header id="header">
-		<h1>My Devoloper Projects</h1>
+		<h1>My Developer Projects</h1>
 	</header>
 	<nav class="navbar">
 			<ul>
@@ -18,5 +18,39 @@
 				<li><a href="index.html">Contact</a></li>
 			</ul>
 		</nav>
+	<br>
+		<label class="switch">
+			<input type="checkbox" id="unitToggle">
+			<span class="slider"></span>
+			</label>
+			<p id="unitLabel">Metric (kg/cm)</p>
+
+		<form id="bmiForm">
+
+		<div id="metricInputs">
+			<label for="weightMetric">Weight (kg):</label>
+			<input type="number" id="weightMetric">
+
+			<label for="heightMetric">Height (cm):</label>
+			<input type="number" id="heightMetric">
+		</div>
+
+		<div id="imperialInputs" style="display:none;">
+			<label for="weightImperial">Weight (lbs):</label>
+			<input type="number" id="weightImperial">
+
+			<label for="heightImperial">Height (feet):</label>
+			<input type="number" id="heightImperialFt">
+
+			<label for="heightImperial">Height (inches):</label>
+			<input type="number" id="heightImperialIn">
+		</div>
+
+		<button type="submit">Calculate BMI</button>
+	</form>
+
+	<h2 id="result"></h2>	
+
+	<script src="bmiCalc.js"></script>
 </body>
 </html>
