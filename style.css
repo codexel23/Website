@@ -41,6 +41,7 @@ nav a:hover {
   background-size:400% 400%;
   animation: rainbow .5s linear infinite;
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -76,7 +77,6 @@ nav a:hover {
 	height:auto;
 }
 
-/* The outer switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -84,6 +84,90 @@ nav a:hover {
   height: 24px;
 }
 
+.bmiBox .switch {
+  display: block;
+  margin: 0 auto;
+}
+
+.bmiCalc {
+	display: flex;
+	margin: 4rem auto;
+	max-width: 1200px;
+	width: 90%;
+	gap: 2rem;
+	align-items: flex-start;
+}
+
+.bmiBox {
+	font-family: monospace;
+	width: 100%;
+	max-width: width 500px;
+	min-height: 300px;
+	margin:4rem auto;
+	padding: 2rem;
+	background: #6653d4;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	flex: 1;
+}
+
+.bmiBox input[type="number"] {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	margin: 0.5rem 0;
+	border: none;
+	border-radius: 4px;
+	font-family: monospace;
+	font-size: 1rem;
+	box-sizing: border-box;
+}
+
+.bmiBox label {
+  display: block;
+  text-align: left; 
+  margin: 0.75rem 0 0.25rem; 
+  font-family: monospace;
+  font-size: 0.9rem;
+}
+
+.bmiBox button {
+  display: block;
+  width: 100%;
+  padding: 0.75rem;
+  margin-top: 1rem;
+  font-family: monospace;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background: #53D4A7;
+  color: #000000;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.bmiBox button:hover {
+  background: #4ABF95;
+}
+
+
+#result {
+	min-height: 2rem;
+	margin-top: 1rem;
+	font-family: monospace;
+	font-size: 1rem;
+	color: #53D4A7;
+}
+
+.bmiTxt {
+	text-align:left;
+	font-family: monospace;
+	font-size: 1.2rem;
+	color: #C2D453;
+	padding: 4rem 1rem;
+	margin: 0;
+	min-width: 1rem;
+	flex: 2;
+}
 /* Hide the checkbox itself */
 .switch input {
   opacity: 0;
@@ -96,7 +180,7 @@ nav a:hover {
   position: absolute;
   cursor: pointer;
   top: 0; left: 0; right: 0; bottom: 0;
-  background-color: #ccc;
+  background-color: #ffffff;
   transition: .4s;
   border-radius: 24px;
 }
@@ -108,14 +192,14 @@ nav a:hover {
   width: 18px;
   left: 3px;
   bottom: 3px;
-  background-color: white;
+  background-color: #6653d4;
   transition: .4s;
   border-radius: 50%;
 }
 
 /* When checked */
 .switch input:checked + .slider {
-  background-color: #2196F3;
+  background-color: #000000;
 }
 
 .switch input:checked + .slider:before {
