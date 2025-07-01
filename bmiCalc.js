@@ -47,3 +47,16 @@ form.addEventListener('submit', function(event) {
         }
     result.textContent = `Your BMI is ${bmi.toFixed(2)}`;
 });
+
+document.addEventListener('DOMContentLoaded', () => {
+  const box = document.querySelector('.bmiBox');
+  const txt = document.querySelector('.bmiTxt');
+
+  requestAnimationFrame(() => {
+    box.classList.add('show');
+
+    setTimeout(() => {
+      txt.classList.add('show');
+    }, 1200);
+  });
+});

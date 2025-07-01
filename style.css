@@ -1,3 +1,6 @@
+
+/* Portfolio Webpage Design */
+
 body{
 	margin:0;
 	padding:0;
@@ -33,6 +36,7 @@ body{
 	font-family:monospace;
 	position:sticky;
 	top:0;
+	z-index: 10;
 }
 
 nav a:hover {
@@ -77,11 +81,14 @@ nav a:hover {
 	height:auto;
 }
 
+/* Body Mass Index Calculator*/
+
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 24px;
+  z-index: auto;
 }
 
 .bmiBox .switch {
@@ -91,6 +98,8 @@ nav a:hover {
 
 .bmiCalc {
 	display: flex;
+	position: relative;
+	overflow: visible;
 	margin: 4rem auto;
 	max-width: 1200px;
 	width: 90%;
@@ -99,16 +108,27 @@ nav a:hover {
 }
 
 .bmiBox {
+	position: relative;
+	z-index: 2;
+	transform: translateX(-100vw);
+	margin-left: -100vw;
+	opacity: 0;
+	transition: transform 1.2s ease-out, opacity 1.2s ease-out;
 	font-family: monospace;
 	width: 100%;
-	max-width: width 500px;
+	max-width: 500px;
 	min-height: 300px;
-	margin:4rem auto;
 	padding: 2rem;
 	background: #6653d4;
 	border-radius: 8px;
 	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 	flex: 1;
+}
+
+.bmiBox.show {
+  transform: translateX(0);
+  margin-left:0;
+  opacity: 1;
 }
 
 .bmiBox input[type="number"] {
@@ -159,6 +179,13 @@ nav a:hover {
 }
 
 .bmiTxt {
+	z-index: 1;
+	position: relative;
+	left:0;
+	top:0;
+	transform: translateX(-200px);
+	opacity: 0;
+	transition: transform 1s ease-out, opacity 1s ease-out;
 	text-align:left;
 	font-family: monospace;
 	font-size: 1.2rem;
@@ -168,14 +195,18 @@ nav a:hover {
 	min-width: 1rem;
 	flex: 2;
 }
-/* Hide the checkbox itself */
+
+.bmiTxt.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
 }
 
-/* The slider */
 .slider {
   position: absolute;
   cursor: pointer;
@@ -197,11 +228,50 @@ nav a:hover {
   border-radius: 50%;
 }
 
-/* When checked */
 .switch input:checked + .slider {
   background-color: #000000;
 }
 
 .switch input:checked + .slider:before {
   transform: translateX(26px);
+}
+
+/* Weather App Project */
+.weather {
+	display: flex;
+	position: relative;
+	overflow: visible;
+	margin: 4rem auto;
+	max-width: 1200px;
+	width: 90%;
+	gap: 2rem;
+	align-items: flex-start;
+}
+
+.weatherTxt {
+	z-index: 1;
+	position: relative;
+	text-align:left;
+	font-family: monospace;
+	font-size: 1.2rem;
+	color: #C2D453;
+	padding: 4rem 1rem;
+	margin: 0;
+	min-width: 1rem;
+	flex: 1.5;
+}
+
+.weatherBox {
+	position: relative;
+	z-index: 2;
+	font-family: monospace;
+	width: 100%;
+	padding: 2rem;
+	background: #6653d4;
+	border-radius: 8px;
+	box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+	flex: 1.5;
+}
+
+.weatherInfo {
 }
